@@ -8,6 +8,8 @@
   --owner-text-color: #3381ff;
   /* 視聴者の文字の色 */
   --audience-text-color: #fff;
+  /* 視聴者の文字の色 */
+  --link-text-color: #fff;
   /*コメントスクロール時間*/
   --scroll-time: 9s;
 }
@@ -30,6 +32,11 @@ body[data-is-embedded="true"] .tw-comment-item-comment {
 
 body[data-is-embedded="true"] .tw-comment-item[data-type="you"] .tw-comment-item-comment {
   color: var(--owner-text-color);
+}
+
+a:link,
+a:visited {
+  color: var();
 }
 
 .tw-comment-list-view__scroller {
