@@ -7,7 +7,7 @@
   --owner-text-color: #3381ff;
   /* 視聴者の文字の色 */
   --audience-text-color: #fff;
-  /* 視聴者の文字の色 */
+  /* リンクの文字の色 */
   --link-text-color: #fff;
   /*コメントスクロール時間*/
   --scroll-time: 9s;
@@ -68,18 +68,18 @@ a:visited {
   // transition: top $scrollAnimeTime;
 
   // static
-  @for $i from 1 through 22 {
-    &:nth-last-child(22n + #{$i}) {
-      top: 4% * ($i - 1);
-    }
-  }
-
-  // random
-  // @for $i from 1 through 100 {
-  //   &:nth-last-child(100n + #{$i}) {
-  //     top: #{randomNum(0, 87)}#{'%'};
+  // @for $i from 1 through 22 {
+  //   &:nth-last-child(22n + #{$i}) {
+  //     top: 4% * ($i - 1);
   //   }
   // }
+
+  // random
+  @for $i from 1 through 100 {
+    &:nth-last-child(100n + #{$i}) {
+      top: #{randomNum(0, 87)}#{'%'};
+    }
+  }
 }
 @keyframes anim {
   0% {
