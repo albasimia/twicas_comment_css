@@ -1,0 +1,88 @@
+:root {
+  /* 文字の大きさ */
+  --font-size: 36px;
+  /* 文字の太さ */
+  --font-weight: bold;
+  /* 配信者の文字の色 */
+  --owner-text-color: #3381ff;
+  /* 視聴者の文字の色 */
+  --audience-text-color: #fff;
+  /*コメントスクロール時間*/
+  --scroll-time: 9s;
+}
+
+// $scrollAnimeTime: 0.4s;
+
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+body[data-is-embedded="true"] {
+  width: 100vw;
+  height: 100vh;
+  .tw-comment-window-page,
+  .tw-comment-item-body {
+    padding: 0;
+  }
+  .tw-comment-item-comment {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: var(--audience-text-color);
+  }
+  .tw-comment-item[data-type="you"] {
+    .tw-comment-item-comment {
+      color: var(--owner-text-color);
+    }
+  }
+}
+
+.tw-comment-list-view__scroller {
+  position: relative;
+  transform: none !important;
+  overflow-x: hidden;
+}
+
+.tw-comment-window-page {
+  max-width: none;
+}
+
+.tw-comment-item-name {
+  display: none;
+}
+
+.tw-comment-item {
+  animation: anim var(--scroll-time) linear;
+  animation-fill-mode: forwards;
+  width: max-content;
+  position: absolute;
+  // transition: top $scrollAnimeTime;
+
+  // static
+  @for $i from 1 through 22 {
+    &:nth-last-child(22n + #{$i}) {
+      top: 4% * ($i - 1);
+    }
+  }
+
+  // random
+  // @for $i from 1 through 100 {
+  //   &:nth-last-child(100n + #{$i}) {
+  //     top: #{randomNum(0, 87)}#{'%'};
+  //   }
+  // }
+}
+@keyframes anim {
+  0% {
+    -webkit-transform: translate(0%);
+    transform: translate(0%);
+    left: 100%;
+  }
+  to {
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+    left: 0%;
+  }
+}
