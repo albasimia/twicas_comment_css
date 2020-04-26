@@ -43,7 +43,7 @@ body[data-is-embedded="true"] {
 
 a:link,
 a:visited {
-  color: var();
+  color: var(--link-text-color);
 }
 
 .tw-comment-list-view__scroller {
@@ -68,18 +68,18 @@ a:visited {
   // transition: top $scrollAnimeTime;
 
   // static
-  // @for $i from 1 through 22 {
-  //   &:nth-last-child(22n + #{$i}) {
-  //     top: 4% * ($i - 1);
-  //   }
-  // }
-
-  // random
-  @for $i from 1 through 100 {
-    &:nth-last-child(100n + #{$i}) {
-      top: #{randomNum(0, 87)}#{'%'};
+  @for $i from 1 through 22 {
+    &:nth-last-child(22n + #{$i}) {
+      top: 4% * ($i - 1);
     }
   }
+
+  // random
+  // @for $i from 1 through 100 {
+  //   &:nth-last-child(100n + #{$i}) {
+  //     top: #{randomNum(0, 87)}#{'%'};
+  //   }
+  // }
 }
 @keyframes anim {
   0% {
