@@ -17,14 +17,8 @@
   --scroll-time: 9s;
 }
 
-// $scrollAnimeTime: 0.4s;
-
-@function randomNum($min, $max) {
-  $rand: random();
-  $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-  @return $randomNum;
-}
+@import "module/functions";
+@import "module/keyframes";
 
 body[data-is-embedded="true"] {
   width: 100vw;
@@ -38,9 +32,13 @@ body[data-is-embedded="true"] {
     font-weight: var(--font-weight);
     color: var(--audience-text-color);
     opacity: var(--text-opacity);
+    .tw-reply-id {
+      color: var(--audience-text-color);
+    }
   }
   .tw-comment-item[data-type="you"] {
-    .tw-comment-item-comment {
+    .tw-comment-item-comment,
+    .tw-reply-id {
       color: var(--owner-text-color);
     }
   }
@@ -66,35 +64,18 @@ a:visited {
 }
 
 .tw-comment-item {
-  animation: anim var(--scroll-time) linear;
+  animation: slide var(--scroll-time) linear;
   animation-fill-mode: forwards;
   width: max-content;
   position: absolute;
-  // transition: top $scrollAnimeTime;
+  left: 100%;
+  will-change: transform, left;
+  backface-visibility: hidden;
 
   // static
-  // @for $i from 1 through 22 {
-  //   &:nth-last-child(22n + #{$i}) {
-  //     top: 4% * ($i - 1);
-  //   }
-  // }
-
-  // // random
-  @for $i from 1 through 100 {
-    &:nth-last-child(100n + #{$i}) {
-      top: #{randomNum(0, 87)}#{'%'};
+  @for $i from 1 through 22 {
+    &:nth-last-child(22n + #{$i}) {
+      top: 4% * ($i - 1);
     }
-  }
-}
-@keyframes anim {
-  0% {
-    -webkit-transform: translate(0%);
-    transform: translate(0%);
-    left: 100%;
-  }
-  to {
-    -webkit-transform: translate(-100%);
-    transform: translate(-100%);
-    left: 0%;
   }
 }
