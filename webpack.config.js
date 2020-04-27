@@ -22,9 +22,6 @@ console.log(entries)
 module.exports = {
     // エントリーファイル
     entry: entries,
-    // entry: {
-    //     'css/scroll.css': `${SRC}/scss/scroll.scss`,
-    // },
     // 出力するディレクトリ・ファイル名などの設定
     output: {
         path: path.resolve(__dirname, DEST + BASE_DIR),
@@ -59,9 +56,7 @@ module.exports = {
     cache: true,
 
     plugins: [
-        // 複数のHTMLファイルを出力する
-        // ...htmlTemplates,
-        // style.cssを出力
+        // cssを出力
         new ExtractTextPlugin('[name]')
     ],
 }
