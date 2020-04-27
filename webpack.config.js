@@ -17,7 +17,6 @@ glob.sync("*.scss", {
     .map(function (key) {
         entries[path.basename(key, '.scss') + '.css'] = path.resolve(SRC, key);
     });
-console.log(entries)
 
 module.exports = {
     // エントリーファイル
