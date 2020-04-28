@@ -11,9 +11,11 @@
   /* リンクの文字の色 */
   --link-text-color: #fff;
   /* 文字の透明度 1〜0で指定 1で不透明、0で透明 */
-  --text-opacity: 0.7;
+  --text-opacity: 1;
   /*コメントスクロール時間*/
   --scroll-time: 9s;
+  /*改行の有無 noneで改行なし blockで改行あり*/
+  --br-style: none;
 }
 
 @-webkit-keyframes slide {
@@ -53,10 +55,15 @@ body[data-is-embedded="true"] .tw-comment-item-comment {
   font-weight: var(--font-weight);
   color: var(--audience-text-color);
   opacity: var(--text-opacity);
+  line-height: 1em;
 }
 
 body[data-is-embedded="true"] .tw-comment-item-comment .tw-reply-id {
   color: var(--audience-text-color);
+}
+
+body[data-is-embedded="true"] .tw-comment-item-comment br {
+  display: var(--br-style);
 }
 
 body[data-is-embedded="true"] .tw-comment-item[data-type="you"] .tw-comment-item-comment,
@@ -186,90 +193,90 @@ body[data-is-embedded="true"] .tw-comment-item:nth-last-child(22n + 22) {
   top: 84%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(1) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(1) {
   top: 0%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(2) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(2) {
   top: 4%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(3) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(3) {
   top: 8%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(4) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(4) {
   top: 12%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(5) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(5) {
   top: 16%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(6) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(6) {
   top: 20%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(7) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(7) {
   top: 24%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(8) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(8) {
   top: 28%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(9) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(9) {
   top: 32%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(10) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(10) {
   top: 36%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(11) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(11) {
   top: 40%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(12) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(12) {
   top: 44%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(13) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(13) {
   top: 48%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(14) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(14) {
   top: 52%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(15) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(15) {
   top: 56%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(16) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(16) {
   top: 60%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(17) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(17) {
   top: 64%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(18) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(18) {
   top: 68%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(19) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(19) {
   top: 72%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(20) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(20) {
   top: 76%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(21) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(21) {
   top: 80%;
 }
 
-body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 200):nth-child(22) {
+body[data-is-embedded="true"] .tw-comment-item:nth-last-child(n + 500):nth-child(22) {
   top: 84%;
 }

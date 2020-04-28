@@ -1,0 +1,105 @@
+@charset "UTF-8";
+:root {
+  /* 文字の大きさ */
+  --font-size: 100vh;
+  /* 100vhは画面の高さ100% */
+  /* 文字の太さ */
+  --font-weight: bold;
+  /* 配信者の文字の色 */
+  --owner-text-color: #3381ff;
+  /* 視聴者の文字の色 */
+  --audience-text-color: #fff;
+  /* リンクの文字の色 */
+  --link-text-color: #fff;
+  /* 文字の透明度 1〜0で指定 1で不透明、0で透明 */
+  --text-opacity: 1;
+  /*コメントスクロール時間*/
+  --scroll-time: 9s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform: translate(110%, 0);
+    left: 100%;
+  }
+  to {
+    transform: translate(-110%, 0);
+    left: 0%;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(110%, 0);
+    left: 100%;
+  }
+  to {
+    transform: translate(-110%, 0);
+    left: 0%;
+  }
+}
+
+body[data-is-embedded="true"] {
+  width: 100vw;
+  height: 100vh;
+}
+
+body[data-is-embedded="true"] .tw-comment-window-page,
+body[data-is-embedded="true"] .tw-comment-item-body {
+  padding: 0;
+}
+
+body[data-is-embedded="true"] .tw-comment-item-comment {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--audience-text-color);
+  opacity: var(--text-opacity);
+}
+
+body[data-is-embedded="true"] .tw-comment-item-comment .tw-reply-id {
+  color: var(--audience-text-color);
+}
+
+body[data-is-embedded="true"] .tw-comment-item[data-type="you"] .tw-comment-item-comment,
+body[data-is-embedded="true"] .tw-comment-item[data-type="you"] .tw-reply-id {
+  color: var(--owner-text-color);
+}
+
+body[data-is-embedded="true"] a:link,
+body[data-is-embedded="true"] a:visited {
+  color: var(--link-text-color);
+}
+
+body[data-is-embedded="true"] .tw-comment-list-view__scroller {
+  position: relative;
+  transform: none !important;
+  overflow-x: hidden;
+}
+
+body[data-is-embedded="true"] .tw-comment-window-page {
+  max-width: none;
+}
+
+body[data-is-embedded="true"] .tw-comment-item-name {
+  display: none;
+}
+
+body[data-is-embedded="true"] .tw-comment-item {
+  -webkit-animation: slide var(--scroll-time) linear;
+          animation: slide var(--scroll-time) linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  left: 100%;
+  will-change: transform, left;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  top: 50%;
+}
+
+body[data-is-embedded="true"] .tw-comment-item .tw-comment-item-comment {
+  transform: translateY(-50%);
+}

@@ -15,6 +15,8 @@
   --text-opacity: 1;
   /*コメントスクロール時間*/
   --scroll-time: 9s;
+  /*改行の有無 noneで改行なし blockで改行あり*/
+  --br-style: none;
 }
 
 @import "module/functions";
@@ -32,8 +34,12 @@ body[data-is-embedded="true"] {
     font-weight: var(--font-weight);
     color: var(--audience-text-color);
     opacity: var(--text-opacity);
+    line-height: 1em;
     .tw-reply-id {
       color: var(--audience-text-color);
+    }
+    br {
+      display: var(--br-style);
     }
   }
   .tw-comment-item[data-type="you"] {
@@ -72,7 +78,7 @@ body[data-is-embedded="true"] {
     backface-visibility: hidden;
 
     // static
-    $itemCount: 200;
+    $itemCount: 500;
     @for $i from 1 through 22 {
       &:nth-last-child(22n + #{$i}) {
         top: 4% * ($i - 1);

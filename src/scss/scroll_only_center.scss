@@ -2,7 +2,7 @@
 
 :root {
   /* 文字の大きさ */
-  --font-size: 36px;
+  --font-size: 100vh;/* 100vhは画面の高さ100% */
   /* 文字の太さ */
   --font-weight: bold;
   /* 配信者の文字の色 */
@@ -15,8 +15,6 @@
   --text-opacity: 1;
   /*コメントスクロール時間*/
   --scroll-time: 9s;
-  /*改行の有無 noneで改行なし blockで改行あり*/
-  --br-style: none;
 }
 
 @import "module/functions";
@@ -36,9 +34,6 @@ body[data-is-embedded="true"] {
     opacity: var(--text-opacity);
     .tw-reply-id {
       color: var(--audience-text-color);
-    }
-    br {
-      display: var(--br-style);
     }
   }
   .tw-comment-item[data-type="you"] {
@@ -75,44 +70,9 @@ body[data-is-embedded="true"] {
     left: 100%;
     will-change: transform, left;
     backface-visibility: hidden;
-
-    // random
-    @for $i from 1 through 100 {
-      &:nth-last-child(100n + #{$i}) {
-        top: #{randomNum(0, 87)}#{"%"};
-      }
-    }
-
-    $itemCount: 500;
-    &:nth-last-child(n + #{$itemCount}):nth-child(1) {
-      top: 20%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(2) {
-      top: 50%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(3) {
-      top: 80%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(4) {
-      top: 35%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(5) {
-      top: 65%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(6) {
-      top: 10%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(7) {
-      top: 60%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(8) {
-      top: 70%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(9) {
-      top: 0%;
-    }
-    &:nth-last-child(n + #{$itemCount}):nth-child(10) {
-      top: 25%;
+    top: 50%;
+    .tw-comment-item-comment {
+      transform: translateY(-50%);
     }
   }
 }
