@@ -44,6 +44,7 @@ module.exports = {
                         options: {
                             sassOptions: {
                                 includePaths: [`${SRC}/scss`],
+                                outputStyle: 'expanded'
                             }
                         },
                     }
