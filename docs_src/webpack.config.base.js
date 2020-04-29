@@ -31,14 +31,14 @@ const htmlTemplates = routeDataMapper({
 module.exports = {
     // エントリーファイル
     entry: {
-        'js/script.js': `${SRC}/js/script.js`,
-        'css/style.css': `${SRC}/scss/style.scss`,
+        './js/script.js': `${SRC}/js/script.js`,
+        './css/style.css': `${SRC}/scss/style.scss`,
     },
     // 出力するディレクトリ・ファイル名などの設定
     output: {
         path: path.resolve(__dirname, DEST + BASE_DIR),
         filename: '[name]',
-        publicPath: BASE_DIR,
+        // publicPath: BASE_DIR,
     },
     module: {
         // 各ファイル形式ごとのビルド設定
