@@ -3,10 +3,57 @@ extends /layout/_default-layout
 prepend config-block
   - page_name = ''
 
-//- append stylesheet-block
+append stylesheet-block
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css")
 
 //- append javascript-block
 
+
 block content-block
-  h1 ツイキャスコメント表示用カスタムCSSたち
-  h2 つかいかた
+  .markdown-body
+    h1 ツイキャスコメント表示用カスタムCSSたち
+    section.description
+      p OBS等の配信ツールを使用しツイキャスのコメントを表示した際に使用可能なカスタムcssを公開しております。
+      p.caution 使用は自己責任でお願いします。
+        br
+        |このcssを利用する事によって生じたあらゆる不利益または損害に対して、製作者は、一切責任を負いません。
+
+    section.howToUse
+      h2 つかいかた
+      h3 ツイキャスのツール配信画面を開き、矢印のボタンを押してURLをコピー。
+      .imgWrapper
+        img(src="./img/cas_comment01.png", alt="")
+      h3 OBSのシーンにBrowserSourceを追加。
+      .imgWrapper
+        img(src="./img/cas_comment02.png", alt="")
+      h3 BrowserSourceの設定を変更
+      .imgWrapper
+        img(src="./img/cas_comment03.png", alt="")
+      p ・URL 先ほどコピーしたURLを貼り付け
+        br
+        |・Width 1280
+        br
+        |・Height 720
+        br
+        | 幅と高さはご自身の環境に合わせて適宜調整してください。
+
+      h3 使用したいcssのページを開き、全てを選択してコピー。
+      .imgWrapper
+        img(src="./img/cas_comment04.png", alt="")
+      h3 cssに既に書かれているものがあれば削除し、先ほどコピーしたものを貼り付け。
+      .imgWrapper
+        img(src="./img/cas_comment05.png", alt="")
+
+    section.customCss
+      h2 カスタムCSSたち
+      h3 横からスクロールしてくるやつ
+      .imgWrapper
+        img(src="./img/scroll_random.png", alt="")
+      h4
+        a(href="https://raw.githubusercontent.com/albasimia/twicas_comment_css/master/public/css/scroll_random.css") ランダム版
+      h4
+        a(href="https://raw.githubusercontent.com/albasimia/twicas_comment_css/master/public/css/scroll_static.css") 上から順番版
+      p.caption ※初期表示時から通算500コメントに到達するとコメントの位置が変わらない、流れてくる途中に入れ替わる等の現象が発生します。
+        br
+        |cssの性質上、これ以上の対応は不可能です。
+
